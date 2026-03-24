@@ -1,0 +1,135 @@
+baseURL = 'https://vinayketkar.github.io/'
+title = 'Vinay Ketkar'
+theme = 'PaperMod'
+paginate = 10
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+
+[params]
+  env = "production"
+  description = "Personal website of Vinay Ketkar — retired mechanical engineer, traveller, photographer, and storyteller."
+  author = "Vinay Ketkar"
+  defaultTheme = "dark"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = false
+  images = ["images/cover.jpg"]
+
+  [params.homeInfoParams]
+    Title = "Namaste! I'm Vinay Ketkar"
+    Content = """
+A retired mechanical engineer from Ujjain, India, with nearly three decades of experience \
+at Larsen & Toubro. Now I spend my time exploring the world, \
+capturing moments through photography, tending my garden, and sharing stories \
+about books, travel, and life's interesting discoveries.
+
+Welcome to my corner of the internet.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/vinayketkar"
+
+  [params.assets]
+    favicon = "/favicon.ico"
+    disableFingerprinting = true
+
+  [params.label]
+    text = "Vinay Ketkar"
+
+# ── Languages ────────────────────────────────────────────────────────────────
+
+[languages]
+
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    title = "Vinay Ketkar"
+
+    [[languages.en.menu.main]]
+      name = "About"
+      url = "/about/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "Blog"
+      url = "/blog/"
+      weight = 2
+    [[languages.en.menu.main]]
+      name = "Travel"
+      url = "/travel/"
+      weight = 3
+    [[languages.en.menu.main]]
+      name = "Creative"
+      url = "/creative/"
+      weight = 4
+    [[languages.en.menu.main]]
+      name = "Skills"
+      url = "/skills/"
+      weight = 5
+
+  [languages.hi]
+    languageName = "हिन्दी"
+    weight = 2
+    title = "विनय केतकर"
+
+    [[languages.hi.menu.main]]
+      name = "परिचय"
+      url = "/hi/about/"
+      weight = 1
+    [[languages.hi.menu.main]]
+      name = "ब्लॉग"
+      url = "/hi/blog/"
+      weight = 2
+    [[languages.hi.menu.main]]
+      name = "यात्रा"
+      url = "/hi/travel/"
+      weight = 3
+    [[languages.hi.menu.main]]
+      name = "रचनात्मक"
+      url = "/hi/creative/"
+      weight = 4
+
+  [languages.mr]
+    languageName = "मराठी"
+    weight = 3
+    title = "विनय केतकर"
+
+    [[languages.mr.menu.main]]
+      name = "परिचय"
+      url = "/mr/about/"
+      weight = 1
+    [[languages.mr.menu.main]]
+      name = "ब्लॉग"
+      url = "/mr/blog/"
+      weight = 2
+    [[languages.mr.menu.main]]
+      name = "प्रवास"
+      url = "/mr/travel/"
+      weight = 3
+    [[languages.mr.menu.main]]
+      name = "सर्जनशील"
+      url = "/mr/creative/"
+      weight = 4
+
+# ── Taxonomies ───────────────────────────────────────────────────────────────
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# ── Markup ───────────────────────────────────────────────────────────────────
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# ── Outputs ──────────────────────────────────────────────────────────────────
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

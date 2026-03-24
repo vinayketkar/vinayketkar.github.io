@@ -1,0 +1,219 @@
+/* ── Vinay Ketkar — Custom Dark Theme ────────────────────────────────────── */
+
+:root {
+  --theme: #1a1a2e;
+  --entry: #16213e;
+  --primary: #e2b714;       /* warm gold accent */
+  --secondary: #17a2b8;     /* teal accent */
+  --tertiary: #e2b714;
+  --content: #e0e0e0;
+  --hljs-bg: #16213e;
+  --code-bg: #16213e;
+  --border: #2a2a4a;
+}
+
+.dark {
+  --theme: #1a1a2e;
+  --entry: #16213e;
+  --primary: #e2b714;
+  --secondary: #17a2b8;
+  --tertiary: #e2b714;
+  --content: #e0e0e0;
+  --hljs-bg: #16213e;
+  --code-bg: #16213e;
+  --border: #2a2a4a;
+}
+
+/* ── Body & Background ──────────────────────────────────────────────────── */
+body {
+  background: var(--theme);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Header / Navigation ────────────────────────────────────────────────── */
+.nav {
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+#menu a {
+  color: var(--content);
+  transition: color 0.2s ease;
+}
+
+#menu a:hover,
+#menu .active {
+  color: var(--primary);
+}
+
+.logo a {
+  color: var(--primary) !important;
+  font-weight: 700;
+}
+
+/* ── Language Switcher ──────────────────────────────────────────────────── */
+.lang-switch a {
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.lang-switch a:hover {
+  background: var(--secondary);
+  color: var(--theme);
+}
+
+/* ── Home Info ──────────────────────────────────────────────────────────── */
+.first-entry .entry-header h1,
+.home-info .entry-hint {
+  color: var(--primary);
+}
+
+.first-entry {
+  border: 1px solid var(--border);
+  background: var(--entry);
+}
+
+/* ── Post List / Entries ────────────────────────────────────────────────── */
+.post-entry {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--entry);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.post-entry:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.entry-header h2 {
+  color: var(--content);
+}
+
+.entry-header h2 a:hover {
+  color: var(--primary);
+}
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+.post-content h2 {
+  color: var(--primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+
+.post-content h3 {
+  color: var(--secondary);
+}
+
+.post-content a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+  color: var(--primary);
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--primary);
+  background: var(--entry);
+  padding: 0.5em 1em;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── Breadcrumbs ────────────────────────────────────────────────────────── */
+.breadcrumbs a {
+  color: var(--secondary);
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+}
+
+.footer a {
+  color: var(--secondary);
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+/* ── Social Icons ───────────────────────────────────────────────────────── */
+.social-icons a {
+  color: var(--secondary);
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
+/* ── Scrollbar (Webkit) ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Image / Figure ─────────────────────────────────────────────────────── */
+figure {
+  margin: 1.5em 0;
+}
+
+figure img {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  margin-top: 0.5em;
+}
+
+/* ── Gallery Grid (for photo pages) ─────────────────────────────────────── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
