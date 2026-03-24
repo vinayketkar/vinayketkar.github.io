@@ -1,133 +1,281 @@
 /* ── Vinay Ketkar — Custom Dark Theme ────────────────────────────────────── */
 
 :root {
-  --theme: #1a1a2e;
-  --entry: #16213e;
-  --primary: #e2b714;       /* warm gold accent */
-  --secondary: #17a2b8;     /* teal accent */
-  --tertiary: #e2b714;
-  --content: #e0e0e0;
-  --hljs-bg: #16213e;
-  --code-bg: #16213e;
-  --border: #2a2a4a;
-}
-
-.dark {
-  --theme: #1a1a2e;
-  --entry: #16213e;
+  --theme: #0f0f1a;
+  --entry: #161625;
   --primary: #e2b714;
   --secondary: #17a2b8;
   --tertiary: #e2b714;
-  --content: #e0e0e0;
-  --hljs-bg: #16213e;
-  --code-bg: #16213e;
-  --border: #2a2a4a;
+  --content: #d4d4d8;
+  --hljs-bg: #161625;
+  --code-bg: #161625;
+  --border: #2a2a40;
+  --gap: 24px;
 }
 
-/* ── Body & Background ──────────────────────────────────────────────────── */
+.dark {
+  --theme: #0f0f1a;
+  --entry: #161625;
+  --primary: #e2b714;
+  --secondary: #17a2b8;
+  --tertiary: #e2b714;
+  --content: #d4d4d8;
+  --hljs-bg: #161625;
+  --code-bg: #161625;
+  --border: #2a2a40;
+}
+
+/* ── Smooth Transitions ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
+}
+
+/* ── Body ───────────────────────────────────────────────────────────────── */
 body {
   background: var(--theme);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
 }
 
 /* ── Header / Navigation ────────────────────────────────────────────────── */
 .nav {
-  background: rgba(26, 26, 46, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 15, 26, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  max-width: 100%;
+}
+
+.logo a {
+  color: var(--primary) !important;
+  font-weight: 800;
+  font-size: 1.15em;
+  letter-spacing: -0.01em;
+}
+
+#menu {
+  gap: 4px;
 }
 
 #menu a {
-  color: var(--content);
-  transition: color 0.2s ease;
+  color: #a1a1aa;
+  font-size: 0.92em;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 #menu a:hover,
 #menu .active {
   color: var(--primary);
-}
-
-.logo a {
-  color: var(--primary) !important;
-  font-weight: 700;
+  background: rgba(226, 183, 20, 0.08);
 }
 
 /* ── Language Switcher ──────────────────────────────────────────────────── */
+.lang-switch {
+  gap: 4px;
+}
+
 .lang-switch a {
   color: var(--secondary);
-  border: 1px solid var(--secondary);
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 0.85em;
+  border: 1px solid rgba(23, 162, 184, 0.4);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.82em;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .lang-switch a:hover {
   background: var(--secondary);
   color: var(--theme);
+  border-color: var(--secondary);
 }
 
-/* ── Home Info ──────────────────────────────────────────────────────────── */
-.first-entry .entry-header h1,
-.home-info .entry-hint {
-  color: var(--primary);
+/* ── Profile Mode (Homepage) ────────────────────────────────────────────── */
+.profile {
+  padding: 3rem 0 2rem;
 }
 
-.first-entry {
-  border: 1px solid var(--border);
-  background: var(--entry);
+.profile .profile_inner h1 {
+  font-size: 2.2em;
+  font-weight: 800;
+  color: #fafafa;
+  margin-bottom: 0.4em;
+  letter-spacing: -0.02em;
+}
+
+.profile .profile_inner .tagline {
+  color: #a1a1aa;
+  font-size: 1.05em;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Profile image glow effect */
+.profile img {
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 30px rgba(226, 183, 20, 0.15), 0 0 60px rgba(23, 162, 184, 0.08);
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.profile img:hover {
+  box-shadow: 0 0 40px rgba(226, 183, 20, 0.25), 0 0 80px rgba(23, 162, 184, 0.15);
+  transform: scale(1.03);
+}
+
+/* Profile buttons */
+.profile .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.profile .buttons a {
+  background: linear-gradient(135deg, rgba(226, 183, 20, 0.12), rgba(23, 162, 184, 0.08));
+  border: 1px solid rgba(226, 183, 20, 0.3);
+  color: #fafafa;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.profile .buttons a:hover {
+  background: linear-gradient(135deg, rgba(226, 183, 20, 0.25), rgba(23, 162, 184, 0.15));
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(226, 183, 20, 0.15);
 }
 
 /* ── Post List / Entries ────────────────────────────────────────────────── */
 .post-entry {
-  border: 1px solid var(--border);
-  border-radius: 8px;
   background: var(--entry);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
 }
 
 .post-entry:hover {
-  transform: translateY(-2px);
-  border-color: var(--primary);
+  transform: translateY(-3px);
+  border-color: rgba(226, 183, 20, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .entry-header h2 {
+  color: #fafafa;
+  font-weight: 700;
+  font-size: 1.25em;
+  letter-spacing: -0.01em;
+}
+
+.entry-content {
+  color: #a1a1aa;
+  font-size: 0.92em;
+}
+
+.entry-footer {
+  color: #71717a;
+  font-size: 0.85em;
+}
+
+/* ── Page Content ───────────────────────────────────────────────────────── */
+.post-content {
+  font-size: 1.05em;
+  line-height: 1.8;
   color: var(--content);
 }
 
-.entry-header h2 a:hover {
-  color: var(--primary);
+.post-content h1 {
+  color: #fafafa;
+  font-weight: 800;
+  margin-top: 2em;
+  font-size: 1.8em;
 }
 
-/* ── Content ────────────────────────────────────────────────────────────── */
 .post-content h2 {
   color: var(--primary);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.3em;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(226, 183, 20, 0.2);
+  padding-bottom: 0.4em;
+  margin-top: 1.8em;
+  font-size: 1.4em;
 }
 
 .post-content h3 {
   color: var(--secondary);
+  font-weight: 600;
+  margin-top: 1.5em;
+  font-size: 1.15em;
 }
 
 .post-content a {
   color: var(--secondary);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(23, 162, 184, 0.4);
+  transition: all 0.2s ease;
 }
 
 .post-content a:hover {
   color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.post-content ul, .post-content ol {
+  padding-left: 1.5em;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;
 }
 
 .post-content blockquote {
   border-left: 3px solid var(--primary);
-  background: var(--entry);
-  padding: 0.5em 1em;
-  border-radius: 0 6px 6px 0;
+  background: rgba(226, 183, 20, 0.05);
+  padding: 1em 1.5em;
+  border-radius: 0 10px 10px 0;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: #d4d4d8;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+.post-content strong {
+  color: #fafafa;
+  font-weight: 600;
+}
+
+/* ── Page Header ────────────────────────────────────────────────────────── */
+.post-header h1 {
+  font-size: 2em;
+  font-weight: 800;
+  color: #fafafa;
+  letter-spacing: -0.02em;
+}
+
+.post-meta {
+  color: #71717a;
 }
 
 /* ── Breadcrumbs ────────────────────────────────────────────────────────── */
+.breadcrumbs {
+  font-size: 0.88em;
+  margin-bottom: 1em;
+}
+
 .breadcrumbs a {
   color: var(--secondary);
 }
@@ -139,6 +287,9 @@ body {
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border);
+  padding: 1.5em 0;
+  color: #52525b;
+  font-size: 0.88em;
 }
 
 .footer a {
@@ -150,18 +301,43 @@ body {
 }
 
 /* ── Social Icons ───────────────────────────────────────────────────────── */
+.social-icons {
+  padding: 12px 0;
+}
+
 .social-icons a {
-  color: var(--secondary);
-  transition: color 0.2s ease;
+  color: #71717a;
+  transition: all 0.2s ease;
 }
 
 .social-icons a:hover {
   color: var(--primary);
+  transform: scale(1.1);
+}
+
+.social-icons a svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Back-to-top Button ─────────────────────────────────────────────────── */
+.top-link {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.top-link:hover {
+  background: var(--primary);
+  color: var(--theme);
+  border-color: var(--primary);
 }
 
 /* ── Scrollbar (Webkit) ─────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -170,7 +346,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -178,6 +354,77 @@ body {
 }
 
 /* ── Image / Figure ─────────────────────────────────────────────────────── */
+figure {
+  margin: 2em 0;
+}
+
+figure img {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #71717a;
+  margin-top: 0.8em;
+  font-size: 0.9em;
+}
+
+/* ── Gallery Grid ───────────────────────────────────────────────────────── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 2rem 0;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── List pages ─────────────────────────────────────────────────────────── */
+.first-entry {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--entry);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .profile .profile_inner h1 {
+    font-size: 1.6em;
+  }
+
+  .profile .buttons a {
+    padding: 8px 18px;
+    font-size: 0.88em;
+  }
+
+  .post-header h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* ── Selection Color ────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(226, 183, 20, 0.3);
+  color: #fafafa;
+}
 figure {
   margin: 1.5em 0;
 }

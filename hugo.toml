@@ -11,24 +11,36 @@ enableRobotsTXT = true
   description = "Personal website of Vinay Ketkar — retired mechanical engineer, traveller, photographer, and storyteller."
   author = "Vinay Ketkar"
   defaultTheme = "dark"
+  disableThemeToggle = false
   ShowReadingTime = true
-  ShowShareButtons = true
+  ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
+  ShowCodeCopyButtons = false
   ShowToc = false
   images = ["images/cover.jpg"]
 
-  [params.homeInfoParams]
-    Title = "Namaste! I'm Vinay Ketkar"
-    Content = """
-A retired mechanical engineer from Ujjain, India, with nearly three decades of experience \
-at Larsen & Toubro. Now I spend my time exploring the world, \
-capturing moments through photography, tending my garden, and sharing stories \
-about books, travel, and life's interesting discoveries.
+  [params.profileMode]
+    enabled = true
+    title = "Namaste! I'm Vinay Ketkar"
+    subtitle = "Retired mechanical engineer from Ujjain, India  •  Traveller  •  Photographer  •  Storyteller  •  Gardener"
+    imageUrl = "/images/profile.svg"
+    imageWidth = 180
+    imageHeight = 180
+    imageTitle = "Vinay Ketkar"
 
-Welcome to my corner of the internet.
-"""
+    [[params.profileMode.buttons]]
+      name = "📖 Blog"
+      url = "/blog/"
+    [[params.profileMode.buttons]]
+      name = "✈️ Travel"
+      url = "/travel/"
+    [[params.profileMode.buttons]]
+      name = "🎨 Creative"
+      url = "/creative/"
+    [[params.profileMode.buttons]]
+      name = "👤 About Me"
+      url = "/about/"
 
   [[params.socialIcons]]
     name = "github"
@@ -39,7 +51,11 @@ Welcome to my corner of the internet.
     disableFingerprinting = true
 
   [params.label]
-    text = "Vinay Ketkar"
+    text = "विनय केतकर • Vinay Ketkar"
+
+  [params.cover]
+    hiddenInList = false
+    hiddenInSingle = false
 
 # ── Languages ────────────────────────────────────────────────────────────────
 
@@ -70,6 +86,10 @@ Welcome to my corner of the internet.
       name = "Skills"
       url = "/skills/"
       weight = 5
+    [[languages.en.menu.main]]
+      name = "🔍"
+      url = "/search/"
+      weight = 6
 
   [languages.hi]
     languageName = "हिन्दी"
